@@ -1,5 +1,5 @@
 
-### Props — React Theory Explained Deeply
+### Props — React Theory and Practical Explained Deeply
 
 #### 1. Props কী?
 
