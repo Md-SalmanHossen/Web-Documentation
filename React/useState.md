@@ -50,9 +50,7 @@ Direct modify করলে UI update হবে না।
 ❌ Wrong: `value = 5`
 ✔ Correct: `setValue(5)`
 
----
 
----
 
 #### How useState Works Internally
 
@@ -100,9 +98,7 @@ setCount(prev => prev + 1);  // now +3
 
 Rule: যদি previous state দরকার হয় → functional update ব্যবহার করবে।
 
----
 
----
 
 #### Types of values allowed inside useState
 
@@ -128,9 +124,6 @@ const [data, setData] = useState(() => heavyCalculation());
 React initial render এ *মাত্র একবার* function run করবে।
 না হলে প্রত্যেক রেন্ডারে calculation হত।
 
----
-
----
 
 ### Every Pattern of useState You Must Know
 
@@ -191,9 +184,6 @@ setUser({...user, name: "Rahim"})
 
 Spread ছাড়া update করলে re-render detect করবে না।
 
----
-
----
 
 #### When NOT to use useState?
 
@@ -204,9 +194,6 @@ Spread ছাড়া update করলে re-render detect করবে না।
 | Global state needed            | Context / Zustand / Redux |
 | Timer/interval ID store        | useRef better             |
 
----
-
----
 
 #### Pitfalls You Must Know (Most Important)
 
@@ -217,9 +204,6 @@ Spread ছাড়া update করলে re-render detect করবে না।
 | loop ভেতরে uncontrolled state updates     | infinite re-render |
 | too many state pieces unnecessarily       | performance drop   |
 
----
-
----
 
 #### Best Practices (Industry-Level)
 
@@ -249,9 +233,7 @@ useState(()=>compute());
 
 ✔ Multiple state combined → useReducer preferred
 
----
 
----
 
 #### Final Mindset Summary
 
@@ -269,11 +251,10 @@ useState(()=>compute());
 
 **useState কে interview perspective** থেকে সম্পূর্ণ বিশ্লেষণ—`useState` কীভাবে data মনে রাখে, কেন immutable, আর কবে কোন question আসতে পারে।
 
----
 
 #### useState কি data মনে রাখে?
 
-**Answer:** ✅ হ্যাঁ, `useState` **component এর memory তে state value রাখে**।
+**Answer:** হ্যাঁ, `useState` **component এর memory তে state value রাখে**।
 
 ##### Internally:
 
@@ -323,7 +304,6 @@ setUser({...user, age: 23});  // ✅ new object
 * Array: `push` বা `pop` direct না, বরং spread / filter / slice ব্যবহার করো
 * Primitive types (number, string, boolean) সাধারণত safe
 
----
 
 #### Interview Perspective
 
