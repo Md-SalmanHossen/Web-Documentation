@@ -6,7 +6,7 @@ React মূলত UI render করে। কিন্তু application এর 
 এই React-বাইরের কাজগুলোকেই বলে **Side Effect**।
 আর Side Effect control করার জন্য React দেয় **useEffect() hook**।
 
----
+
 
 ### Side Effect কী?
 
@@ -24,7 +24,7 @@ UI update এর বাইরে browser বা external system যেসব ক
 
 অর্থাৎ **UI ছাড়া বাইরের কাজ মানেই Side Effect।**
 
----
+
 
 ## React Component Lifecycle (Basic Idea)
 
@@ -36,7 +36,7 @@ UI update এর বাইরে browser বা external system যেসব ক
 
 useEffect এই তিনটা lifecycle moment-এ কাজ চালাতে পারে।
 
----
+
 
 ### useEffect কী করে?
 
@@ -47,7 +47,7 @@ useEffect এই তিনটা lifecycle moment-এ কাজ চালাত�
 এক লাইনে:
 **useEffect = Side Effect handler + Lifecycle controller**
 
----
+
 
 ### useEffect Syntax
 
@@ -61,7 +61,7 @@ useEffect(() => {
 }, [dependencies]);
 ```
 
----
+
 
 # useEffect এর ৩ ধরণ
 
@@ -79,7 +79,6 @@ useEffect(() => {
 * one-time setup
 * initial load tasks
 
----
 
 ### 2) dependency change হলে চলবে
 
@@ -95,7 +94,7 @@ useEffect(() => {
 * id বদলালে নতুন API call
 * calculated values update
 
----
+
 
 ### 3) Cleanup + Unmount Handling
 
@@ -113,7 +112,7 @@ useEffect(() => {
 * event listener remove করা
 * socket/websocket disconnect করা
 
----
+
 
 # Full Lifecycle Example
 
@@ -134,7 +133,7 @@ function Example(){
 }
 ```
 
----
+
 
 # Practical Examples (Beginner Friendly)
 
@@ -148,7 +147,7 @@ useEffect(() => {
 }, []);
 ```
 
----
+
 
 ### 2) Dependency অনুযায়ী data reload
 
@@ -160,7 +159,7 @@ useEffect(() => {
 }, [id]);
 ```
 
----
+-
 
 ### 3) Loading + Error সহ API handling
 
@@ -174,7 +173,7 @@ useEffect(() => {
 }, []);
 ```
 
----
+
 
 ### 4) Window Resize Listener + Cleanup
 
@@ -187,7 +186,7 @@ useEffect(() => {
 }, []);
 ```
 
----
+
 
 # Final Quick Cheatsheet
 
@@ -200,7 +199,7 @@ useEffect(() => {
 | API fetch                | Mount / dependency ভিত্তিক useEffect  |
 | Timer/Event Listener     | useEffect + Cleanup                   |
 
----
+
 
 ### Bottom Summary
 
@@ -216,7 +215,7 @@ Screen first load	only once → []
 Cleanup দরকার	return ()=>{}
 API load করতে চাই	সবসময় [] inside useEffect
 
----
+
 **useEffect এর Basic Practical Examples** – যেখানে API fetch, event handle, timer, localStorage, dependency change দেখানো হবে।
 
 
@@ -254,7 +253,7 @@ function Users() {
 
 Real use — component load হলে API থেকে ডাটা এনে দেখাতে ব্যবহার হয়।
 
----
+
 
 #### Example 2 — Button click হলে data fetch
 
@@ -286,7 +285,7 @@ function App() {
 
 Useful for pagination, filtering, dropdown change.
 
----
+
 
 #### Example 3 — Timer (setInterval) + Cleanup
 
@@ -313,9 +312,9 @@ function Timer(){
 | `setInterval`               | প্রতি সেকেন্ডে count +1         |
 | `return()=>clearInterval()` | component remove হলে timer বন্ধ |
 
-📌 Very important — cleanup না দিলে memory leak হবে।
+ Very important — cleanup না দিলে memory leak হবে।
 
----
+
 
 #### 📌 Example 4 — Window Resize Listener (Event add/remove)
 
@@ -334,10 +333,9 @@ function WindowSize(){
 }
 ```
 
-📌 Mount এ listener add করা হয়
-📌 Unmount এ remove করা হয়
+- Mount এ listener add করা হয়
+- Unmount এ remove করা হয়
 
----
 
 ##### 📌 Example 5 — LocalStorage Save & Load
 
@@ -363,11 +361,11 @@ function App(){
 
 ##### What happens?
 
-✔ input change → name change
-✔ useEffect run → value localStorage এ save
-✔ reload করলেও value থেকে যায়
+- input change → name change
+- useEffect run → value localStorage এ save
+- reload করলেও value থেকে যায়
 
----
+
 
 # 📌 Example 6 — Loading + Error Handling with API
 
@@ -398,13 +396,10 @@ function Example(){
 ```
 
 এটা হলো **perfect production pattern।**
-✔ loading
-✔ error
-✔ data state
+- loading
+- error
+- data state
 
----
-
----
 
 ###### 🎯 এক কথায় Summary 
 | Goal                     | Example                       |

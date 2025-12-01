@@ -14,7 +14,7 @@ UI = State এর reflection.
 | UI static       | UI dynamically update হয় |
 | No interaction  | Interaction possible     |
 
----
+
 
 #### Why we need `useState`?
 
@@ -28,7 +28,6 @@ Example:
 
 এই dynamic behaviour এর জন্যই state লাগে → আর সেটা দেয় `useState`.
 
----
 
 #### useState Syntax Breakdown
 
@@ -69,14 +68,12 @@ slot3 → useState([]) => todos
 Component rerender হয় — কিন্তু slot same থাকে।
 তাই পুরনো value lost হয় না।
 
----
 
 #### Why React won't update UI immediately?
 
 Because React batches & schedules updates — যাতে প্রতি পরিবর্তনে UI না ঝাঁকে।
 তাই setState asynchronous behaviour দেখায়।
 
----
 
 Example:
 
@@ -111,7 +108,7 @@ Rule: যদি previous state দরকার হয় → functional update ব�
 | Object          | User data           |
 | Function return | Lazy initialization |
 
----
+
 
 ##### Lazy Initialization (Important for Optimization)
 
@@ -127,7 +124,6 @@ React initial render এ *মাত্র একবার* function run কর�
 
 ### Every Pattern of useState You Must Know
 
----
 
 #### Number State
 
@@ -136,7 +132,7 @@ const [count, setCount] = useState(0);
 <button onClick={() => setCount(count + 1)}>+</button>
 ```
 
----
+
 
 #### String State
 
@@ -145,7 +141,7 @@ const [msg, setMsg] = useState("Hello");
 <button onClick={() => setMsg("Welcome!")}>Change</button>
 ```
 
----
+
 
 #### Boolean Toggle
 
@@ -156,7 +152,7 @@ const [show, setShow] = useState(true);
 </button>
 ```
 
----
+
 
 #### Array Update
 
@@ -165,7 +161,7 @@ setList([...list, "New Item"]);  // Add
 setList(list.filter(x=>x !== item)); // Remove
 ```
 
----
+
 
 #### Object Update (Most Misused)
 
@@ -247,7 +243,7 @@ useState(()=>compute());
 | Heavy initial value?     | Lazy init            |
 | State too many হলে?      | useReducer / Context |
 
----
+
 
 **useState কে interview perspective** থেকে সম্পূর্ণ বিশ্লেষণ—`useState` কীভাবে data মনে রাখে, কেন immutable, আর কবে কোন question আসতে পারে।
 
@@ -276,7 +272,7 @@ slot3 -> useState([]) => tasks
 
 তাই useState “data মনে রাখে” এবং next render এ ব্যবহার হয়।
 
----
+
 
 #### useState কি immutable?
 
@@ -351,7 +347,7 @@ setUser({...user, age: 23});  // ✅ new object
 
    * Function runs only once → performance optimization
 
----
+
 
 #### Extra Tips for Interviews
 
@@ -361,7 +357,7 @@ setUser({...user, age: 23});  // ✅ new object
 * “Lazy initialization” → bonus point for optimization question
 * Object / Array updates → spread / map / filter → always use new reference
 
----
+
 
 💡 **Summary Table (Interview Ready)**
 
